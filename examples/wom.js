@@ -1,0 +1,10 @@
+wm ={clearsky : 'آسمان صاف',
+fewclouds : 'کمی تا قسمتی ابری',
+scatteredclouds : 'ابری پراکنده',
+brokenclouds : 'ابرهای بارشی',
+showerrain : 'باران شدید',
+rain : 'بارانی',
+thunderstorm : 'رعد و برق',
+snow : 'برفی',
+mist : 'مه آلود',
+overcastclouds : 'ابرهای تیره'}
