@@ -212,8 +212,8 @@
         .addTo(map)
         .open('home');
         
-        var street=L.TileLayer.boundaryCanvas('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    id: 'mapbox.streets',
+        var street=L.TileLayer.boundaryCanvas('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    id: 'mapbox/streets-v12',
     accessToken: 'pk.eyJ1IjoiYWxpMTIwMSIsImEiOiJjazF0cTdoYW8waHM3M2JxeXZwZjM3dDg5In0.x3IEWUyeHcXz6k3VruQfuQ',
     boundary: ir
     
