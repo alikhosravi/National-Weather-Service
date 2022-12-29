@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Iran Weather Service</title>
+    <title>Iran Weather Today</title>
 
     <meta
       name="viewport"
@@ -36,7 +36,7 @@
       #map {
         height: 100%;
         font: 10pt "Helvetica Neue", Arial, Helvetica, sans-serif;
-        font-family: 'B Nazanin';
+        font-family: 'Times';
         background-color: white;
       }
 
@@ -52,7 +52,7 @@
           padding-right: 0px;
           font-size: 16px;
           cursor: pointer;
-          font-family: 'B Nazanin';
+          font-family: 'Times';
           text-align: right;
         }
         
@@ -100,44 +100,42 @@
       <div class="leaflet-sidebar-content">
         <div class="leaflet-sidebar-pane" id="home">
           <h1 class="leaflet-sidebar-header">
-            داشبورد
+            Dashboard
             <span class="leaflet-sidebar-close"
               ><i class="fa fa-caret-right"></i
             ></span>
           </h1>
-          <p>نسخه آزمایشی سامانه اطلاعات مکانی</p>
+          <p>Weather today</p>
           <p id="te"></p>
         </div>
 
         <div class="leaflet-sidebar-pane" id="layer">
-            <h1 class="leaflet-sidebar-header">
-              لایه ها<span class="leaflet-sidebar-close"
-                ><i class="fa fa-caret-right"></i
-              ></span>
+            <h1 class="leaflet-sidebar-header"> Layers
+              <span class="leaflet-sidebar-close"><i class="fa fa-caret-right"></i></span>
             </h1>
             <p>
                 <br>
-                  <p style="float: right; margin-right:65%;"><input class = "bton streets" type="button" value="نقشه راه ها" onclick="basemap_str()" style="font-size: 1rem;"></p>
+                  <p style="float: right; margin-right:65%;"><input class = "bton streets" type="button" value="Streets" onclick="basemap_str()" style="font-size: 1rem;"></p>
                   <br><br>
-                  <p style="float: right; margin-right:65%;"><input class = "bton satellite" style="font-size: 1rem;" type="button" value="تصویر ماهواره ای" onclick="basemap_stl()" ></p>
+                  <p style="float: right; margin-right:65%;"><input class = "bton satellite" style="font-size: 1rem;" type="button" value="satellite imagery" onclick="basemap_stl()" ></p>
                   <br><br>
-                  <ul style="font-size: 1rem; margin-left: 11%;">لایه مودیس<input class = "bton satellite" style="font-size: 1rem; margin-left: 2%;" type="checkbox" value="لایه مودیس" checked onselect=""></ul><br>
               </p>
           </div>
 
           <div class="leaflet-sidebar-pane" id="legend">
             <h1 class="leaflet-sidebar-header">
-              راهنما<span class="leaflet-sidebar-close"
+              Legend<span class="leaflet-sidebar-close"
                 ><i class="fa fa-caret-right"></i
               ></span>
             </h1>
             <p> <h3 id ='l3' style="font-size: 1.2rem;"></h3><img  id = "ig" src="lg.gif" style="width: 3em;height: 3em;">
             </p>
+            
           </div>
 
         <div class="leaflet-sidebar-pane" id="profile">
             <h1 class="leaflet-sidebar-header">
-              پروفایل کاربری<span class="leaflet-sidebar-close"
+              Profile <span class="leaflet-sidebar-close"
                 ><i class="fa fa-caret-right"></i
               ></span>
             
@@ -147,13 +145,13 @@
 
                 <div class="form-group"> <br><br>
 
-                  <input type="text" class="form-control" id="usr" name="username" placeholder="نام کاربری">
+                  <input type="text" class="form-control" id="usr" name="username" placeholder=" User name">
                 </div>
                 <div class="form-group">
 
-                  <input type="password" class="form-control" id="pwd" name="password" placeholder="رمز عبور">
+                  <input type="password" class="form-control" id="pwd" name="password" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary" style="height: 2em;width: 3em;text-align: center;">ورود</button>
+                <button type="submit" class="btn btn-primary" style="height: 2em;width: 3em;text-align: center;">Log in</button>
   
             </div>
 
@@ -162,7 +160,7 @@
 
         <div class="leaflet-sidebar-pane" id="messages">
           <h1 class="leaflet-sidebar-header">
-            مرکز پیام<span class="leaflet-sidebar-close"
+            Messages<span class="leaflet-sidebar-close"
               ><i class="fa fa-caret-right"></i
             ></span>
           </h1>
@@ -170,7 +168,7 @@
 
         <div class="leaflet-sidebar-pane" id="settings">
           <h1 class="leaflet-sidebar-header">
-            تنظیمات<span class="leaflet-sidebar-close"
+            Settings<span class="leaflet-sidebar-close"
               ><i class="fa fa-caret-right"></i
             ></span>
           </h1>
@@ -181,19 +179,15 @@
 
 
     <div id="map"></div>
-    <img
-        style="position: fixed; bottom: 0; left: 0; border: 0; z-index: 1000;"
-        src="az.png"
-        alt="Fork me on GitHub"
-    />
-    <ul id="time" style="position: fixed; top: 0.7em; left: 1em; border: 0; z-index: 2000; transform: rotate(90deg);font-size: 1em; color: mediumblue;"></ul>
+    
+    <ul id="time" style="position: fixed; top: 0.7em; left: 1em; border: 0; z-index: 2000;font-size: 1.3em; color: mediumblue;"></ul>
 
     <script src="../js/leaflet.js"></script>
     <script src="../js/leaflet-sidebar.js"></script>
     <script src="../js/BoundaryCanvas.js"></script>
     <script src="http://leaflet-extras.github.io/leaflet-providers/leaflet-providers.js"></script>
     <script src="iran.js"></script>
-    <script src="irc.js"></script>
+    
     <script src="wom.js"></script>
     <script src="time.js"></script>
     <script src="https://unpkg.com/@mapbox/leaflet-pip@latest/leaflet-pip.js"></script>
@@ -266,12 +260,12 @@ function pp() {
       a1 = lat;
       a2 = lon;
       a3 = m;
-      return ' عرض جغرافیایی'+':  '+lt.toString()+
-    '<br>'+'  طول جغرافیایی'+':   '+lg.toString() + 
-    "<br>"+"دما"+":   "+m.toString()+'<br>'+'<img src="'+c.toString()+'.gif" style="width:3em;height:3em;">'
+      return 'Latitude'+':  '+lt.toString()+
+    '<br>'+'Latitude'+':   '+lg.toString() + 
+    "<br>"+"Temperature"+":   "+m.toString()+'<br>'+'<img src="'+c.toString()+'.webp" style="width:3em;height:3em;">'
     })
     .openOn(map)
-    document.getElementById('ig').src = c.toString()+'.gif'
+    document.getElementById('ig').src = c.toString()+'.webp'
     cs = c.toString() 
     cc = cs.replace(/\s+/g, '')
 
@@ -285,10 +279,10 @@ function pp2() {
     .setContent(function co(a1,a2) {
       a1 = lat;
       a2 = lon;
-      return 'خطا در اتصال به اینترنت'+'<br>'+'<br>'+'<img src="conn.gif" style="width:3em;height:3em;">'
+      return 'Internet network error'+'<br>'+'<br>'+'<img src="conn.webp" style="width:3em;height:3em;">'
     })
     .openOn(map)
-    document.getElementById('ig').src = c.toString()+'.gif'
+    document.getElementById('ig').src = c.toString()+'.webp'
     cs = c.toString() 
     cc = cs.replace(/\s+/g, '')
 
